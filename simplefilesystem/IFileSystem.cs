@@ -4,7 +4,7 @@ using System.IO;
 
 namespace simplefilesystem
 {
-    public interface IFileSystem : IDisposable
+    public interface IFileSystem
     {
         void CreateDirectory(FilePath path);
 

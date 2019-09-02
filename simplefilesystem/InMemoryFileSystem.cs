@@ -80,11 +80,6 @@ namespace simplefilesystem
             parent.Remove(path);
         }
 
-        public void Dispose()
-        {
-            // nothing to dispose
-        }
-
         public override bool Equals(object obj)
         {
             return obj is InMemoryFileSystem system &&
@@ -115,7 +110,7 @@ namespace simplefilesystem
         public ICollection<FilePath> GetEntities(FilePath path)
         {
             if (!path.IsDirectory)
-                throw new ArgumentException("The specified path is no directory.", "path");
+                throw new ArgumentException("The specified path is no directory.", nameof(path));
             if (!Directories.TryGetValue(path, out var subentities))
                 throw new DirectoryNotFoundException();
             return subentities;

@@ -53,11 +53,6 @@ namespace simplefilesystem
                 Directory.Delete(GetPhysicalPath(path), true);
         }
 
-        public void Dispose()
-        {
-            PhysicalRoot = null;
-        }
-
         public bool Exists(FilePath path)
         {
             return path.IsFile
